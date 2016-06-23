@@ -389,10 +389,11 @@ int s_parser_c_clear_comments (char *buf)
 		}
 	}
 
+	l = strlen(buf);
 	for (i = 0; i < l; i++) {
 		if (buf[i] == '/' &&
 		    buf[i + 1] == '/') {
-			while (buf[i] != '\n') {
+			while (buf[i] && buf[i] != '\n') {
 				buf[i++] = ' ';
 			}
 		}
